@@ -59,41 +59,40 @@ export const useAppStore = defineStore('app', {
       dynamicRouter: true, // 是否动态路由
       serverDynamicRouter: true, // 是否服务端渲染动态路由
       fixedMenu: false, // 是否固定菜单
-
-      layout: 'classic', // layout布局
+      layout: 'topLeft', // layout布局
       isDark: false, // 是否是暗黑模式
-      currentSize: 'default', // 组件尺寸
+      currentSize: 'small', // 组件尺寸
       theme: {
         // 主题色
-        elColorPrimary: '#409eff',
+        elColorPrimary: '#009688',
         // 左侧菜单边框颜色
-        leftMenuBorderColor: 'inherit',
+        leftMenuBorderColor: '#eee',
         // 左侧菜单背景颜色
-        leftMenuBgColor: '#001529',
+        leftMenuBgColor: '#fff',
         // 左侧菜单浅色背景颜色
-        leftMenuBgLightColor: '#0f2438',
+        leftMenuBgLightColor: '#fff',
         // 左侧菜单选中背景颜色
-        leftMenuBgActiveColor: 'var(--el-color-primary)',
+        leftMenuBgActiveColor: 'RGBA(0,150,136,0.1)',
         // 左侧菜单收起选中背景颜色
-        leftMenuCollapseBgActiveColor: 'var(--el-color-primary)',
+        leftMenuCollapseBgActiveColor: 'RGBA(0,150,136,0.1)',
         // 左侧菜单字体颜色
-        leftMenuTextColor: '#bfcbd9',
+        leftMenuTextColor: '#333',
         // 左侧菜单选中字体颜色
-        leftMenuTextActiveColor: '#fff',
+        leftMenuTextActiveColor: 'var(--el-color-primary)',
         // logo字体颜色
-        logoTitleTextColor: '#fff',
+        logoTitleTextColor: '#inherit',
         // logo边框颜色
-        logoBorderColor: 'inherit',
+        logoBorderColor: '#eee',
         // 头部背景颜色
-        topHeaderBgColor: '#fff',
+        topHeaderBgColor: '#009688',
         // 头部字体颜色
-        topHeaderTextColor: 'inherit',
+        topHeaderTextColor: '#fff',
         // 头部悬停颜色
-        topHeaderHoverColor: '#f6f6f6',
+        topHeaderHoverColor: '#333',
         // 头部边框颜色
-        topToolBorderColor: '#eee',
+        topToolBorderColor: '#009688',
         // 组件轮廓直角
-        elBorderRadiusBase: '4px',
+        elBorderRadiusBase: '0px',
       },
     }
   },
@@ -312,7 +311,7 @@ export const useAppStore = defineStore('app', {
     setHeaderTheme(color: string) {
       const isDarkColor = colorIsDark(color)
       const textColor = isDarkColor ? '#fff' : 'inherit'
-      const textHoverColor = isDarkColor ? lighten(color!, 6) : '#f6f6f6'
+      const textHoverColor = isDarkColor ? lighten(color!, 20) : '#f6f6f6'
       const topToolBorderColor = isDarkColor ? color : '#eee'
       setCssVar('--top-header-bg-color', color)
       setCssVar('--top-header-text-color', textColor)

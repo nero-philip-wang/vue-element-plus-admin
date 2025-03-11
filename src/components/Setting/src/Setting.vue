@@ -81,7 +81,7 @@ const copyConfig = async () => {
       // 标签页
       tagsView: ${appStore.getTagsView},
       // 标签页图标
-      getTagsViewIcon: ${appStore.getTagsViewIcon},
+      tagsViewIcon: ${appStore.getTagsViewIcon},
       // logo
       logo: ${appStore.getLogo},
       // 菜单手风琴
@@ -129,7 +129,7 @@ const copyConfig = async () => {
         // 头部边框颜色
         topToolBorderColor: '${appStore.getTheme.topToolBorderColor}',
         // 组件轮廓直角
-        elBorderRadiusBase: ''${appStore.getTheme.elBorderRadiusBase}''
+        elBorderRadiusBase: '${appStore.getTheme.elBorderRadiusBase}',
       }
     `,
     legacy: true,
