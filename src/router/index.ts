@@ -13,8 +13,8 @@ export const constantRouterMap: AppRouteRecordRaw[] = [
     redirect: '/level',
     name: 'Root',
     meta: {
-      hidden: true
-    }
+      hidden: true,
+    },
   },
   {
     path: '/redirect',
@@ -25,13 +25,13 @@ export const constantRouterMap: AppRouteRecordRaw[] = [
         path: '/redirect/:path(.*)',
         name: 'RedirectHub',
         component: () => import('@/views/Redirect/Redirect.vue'),
-        meta: {}
-      }
+        meta: {},
+      },
     ],
     meta: {
       hidden: true,
-      noTagsView: true
-    }
+      noTagsView: true,
+    },
   },
   {
     path: '/login',
@@ -40,8 +40,8 @@ export const constantRouterMap: AppRouteRecordRaw[] = [
     meta: {
       hidden: true,
       title: t('router.login'),
-      noTagsView: true
-    }
+      noTagsView: true,
+    },
   },
   {
     path: '/404',
@@ -50,9 +50,9 @@ export const constantRouterMap: AppRouteRecordRaw[] = [
     meta: {
       hidden: true,
       title: '404',
-      noTagsView: true
-    }
-  }
+      noTagsView: true,
+    },
+  },
 ]
 
 export const asyncRouterMap: AppRouteRecordRaw[] = [
@@ -63,7 +63,7 @@ export const asyncRouterMap: AppRouteRecordRaw[] = [
     name: 'Level',
     meta: {
       title: t('router.level'),
-      icon: 'carbon:skill-level-advanced'
+      icon: 'carbon:skill-level-advanced',
     },
     children: [
       {
@@ -72,7 +72,7 @@ export const asyncRouterMap: AppRouteRecordRaw[] = [
         component: getParentLayout(),
         redirect: '/level/menu1/menu1-1/menu1-1-1',
         meta: {
-          title: t('router.menu1')
+          title: t('router.menu1'),
         },
         children: [
           {
@@ -82,7 +82,7 @@ export const asyncRouterMap: AppRouteRecordRaw[] = [
             redirect: '/level/menu1/menu1-1/menu1-1-1',
             meta: {
               title: t('router.menu11'),
-              alwaysShow: true
+              alwaysShow: true,
             },
             children: [
               {
@@ -90,38 +90,38 @@ export const asyncRouterMap: AppRouteRecordRaw[] = [
                 name: 'Menu111',
                 component: () => import('@/views/Level/Menu111.vue'),
                 meta: {
-                  title: t('router.menu111')
-                }
-              }
-            ]
+                  title: t('router.menu111'),
+                },
+              },
+            ],
           },
           {
             path: 'menu1-2',
             name: 'Menu12',
             component: () => import('@/views/Level/Menu12.vue'),
             meta: {
-              title: t('router.menu12')
-            }
-          }
-        ]
+              title: t('router.menu12'),
+            },
+          },
+        ],
       },
       {
         path: 'menu2',
         name: 'Menu2',
         component: () => import('@/views/Level/Menu2.vue'),
         meta: {
-          title: t('router.menu2')
-        }
-      }
-    ]
-  }
+          title: t('router.menu2'),
+        },
+      },
+    ],
+  },
 ]
 
 const router = createRouter({
   history: createWebHashHistory(),
   strict: true,
   routes: constantRouterMap as RouteRecordRaw[],
-  scrollBehavior: () => ({ left: 0, top: 0 })
+  scrollBehavior: () => ({ left: 0, top: 0 }),
 })
 
 export const resetRouter = (): void => {

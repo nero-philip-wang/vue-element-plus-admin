@@ -11,7 +11,7 @@ const abortControllerMap: Map<string, AbortController> = new Map()
 
 const axiosInstance: AxiosInstance = axios.create({
   timeout: REQUEST_TIMEOUT,
-  baseURL: PATH_URL
+  baseURL: PATH_URL,
 })
 
 axiosInstance.interceptors.request.use((res: InternalAxiosRequestConfig) => {
@@ -33,7 +33,7 @@ axiosInstance.interceptors.response.use(
     console.log('err： ' + error) // for debug
     ElMessage.error(error.message)
     return Promise.reject(error)
-  }
+  },
 )
 
 axiosInstance.interceptors.request.use(defaultRequestInterceptors)
@@ -68,7 +68,7 @@ const service = {
       controller.abort()
     }
     abortControllerMap.clear()
-  }
+  },
 }
 
 export default service

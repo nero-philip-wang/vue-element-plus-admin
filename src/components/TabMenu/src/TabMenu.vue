@@ -46,7 +46,7 @@ export default defineComponent({
         const children = unref(tabRouters).find(
           (v) =>
             (v.meta?.alwaysShow || (v?.children?.length && v?.children?.length > 1)) &&
-            v.path === path
+            v.path === path,
         )?.children
 
         tabActive.value = path
@@ -55,7 +55,7 @@ export default defineComponent({
             cloneDeep(children).map((v) => {
               v.path = pathResolve(unref(tabActive), v.path)
               return v
-            })
+            }),
           )
         }
       }
@@ -69,8 +69,8 @@ export default defineComponent({
       },
       {
         immediate: true,
-        deep: true
-      }
+        deep: true,
+      },
     )
 
     const showTitle = ref(true)
@@ -87,8 +87,8 @@ export default defineComponent({
         }
       },
       {
-        immediate: true
-      }
+        immediate: true,
+      },
     )
 
     // 是否显示菜单
@@ -115,7 +115,7 @@ export default defineComponent({
             cloneDeep(item.children).map((v) => {
               v.path = pathResolve(unref(tabActive), v.path)
               return v
-            })
+            }),
           )
         }
       } else {
@@ -147,8 +147,8 @@ export default defineComponent({
           'relative bg-[var(--left-menu-bg-color)] top-1px z-3000 layout-border__right',
           {
             'w-[var(--tab-menu-max-width)]': !unref(collapse),
-            'w-[var(--tab-menu-min-width)]': unref(collapse)
-          }
+            'w-[var(--tab-menu-min-width)]': unref(collapse),
+          },
         ]}
         onMouseleave={mouseleave}
       >
@@ -161,7 +161,7 @@ export default defineComponent({
                     ? v
                     : {
                         ...(v?.children && v?.children[0]),
-                        path: pathResolve(v.path, (v?.children && v?.children[0])?.path as string)
+                        path: pathResolve(v.path, (v?.children && v?.children[0])?.path as string),
                       }
                 ) as AppRouteRecordRaw
                 return (
@@ -170,8 +170,8 @@ export default defineComponent({
                       `${prefixCls}__item`,
                       'text-center text-12px relative py-12px cursor-pointer',
                       {
-                        'is-active': isActive(v.path)
-                      }
+                        'is-active': isActive(v.path),
+                      },
                     ]}
                     onClick={() => {
                       tabClick(item)
@@ -192,7 +192,7 @@ export default defineComponent({
         <div
           class={[
             `${prefixCls}--collapse`,
-            'text-center h-[var(--tab-menu-collapse-height)] leading-[var(--tab-menu-collapse-height)] cursor-pointer'
+            'text-center h-[var(--tab-menu-collapse-height)] leading-[var(--tab-menu-collapse-height)] cursor-pointer',
           ]}
           onClick={setCollapse}
         >
@@ -206,14 +206,14 @@ export default defineComponent({
               '!left-[var(--tab-menu-max-width)]': !unref(collapse),
               '!w-[var(--left-menu-max-width)] border-r-1 border-r-solid border-[var(--el-border-color)]':
                 unref(showMenu) || unref(fixedMenu),
-              '!w-0': !unref(showMenu) && !unref(fixedMenu)
-            }
+              '!w-0': !unref(showMenu) && !unref(fixedMenu),
+            },
           ]}
           style="transition: width var(--transition-time-02), left var(--transition-time-02);"
         ></Menu>
       </div>
     )
-  }
+  },
 })
 </script>
 

@@ -29,12 +29,12 @@ export default defineComponent({
     extra: propTypes.string.def(''),
     schema: {
       type: Array as PropType<DescriptionsSchema[]>,
-      default: () => []
+      default: () => [],
     },
     data: {
       type: Object as PropType<any>,
-      default: () => ({})
-    }
+      default: () => ({}),
+    },
   },
   setup(props, { slots, attrs }) {
     const getBindValue = computed((): any => {
@@ -76,14 +76,14 @@ export default defineComponent({
         <div
           class={[
             prefixCls,
-            'bg-[var(--el-color-white)] dark:bg-[var(--el-bg-color)] dark:border-[var(--el-border-color)] dark:border-1px'
+            'bg-[var(--el-color-white)] dark:bg-[var(--el-bg-color)] dark:border-[var(--el-border-color)] dark:border-1px',
           ]}
         >
           {props.title ? (
             <div
               class={[
                 `${prefixCls}-header`,
-                'relative h-50px flex justify-between items-center layout-border__bottom px-10px cursor-pointer'
+                'relative h-50px flex justify-between items-center layout-border__bottom px-10px cursor-pointer',
               ]}
               onClick={toggleClick}
             >
@@ -115,12 +115,12 @@ export default defineComponent({
                             default: () =>
                               item.slots?.default
                                 ? item.slots?.default(props.data)
-                                : get(props.data, item.field)
+                                : get(props.data, item.field),
                           }}
                         </ElDescriptionsItem>
                       )
                     })
-                  }
+                  },
                 }}
               </ElDescriptions>
             </div>
@@ -128,7 +128,7 @@ export default defineComponent({
         </div>
       )
     }
-  }
+  },
 })
 </script>
 

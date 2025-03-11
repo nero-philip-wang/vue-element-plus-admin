@@ -14,7 +14,7 @@ const prefixCls = getPrefixCls('input-password')
 const props = defineProps({
   // 是否显示密码强度
   strength: propTypes.bool.def(false),
-  modelValue: propTypes.string.def('')
+  modelValue: propTypes.string.def(''),
 })
 
 watch(
@@ -22,7 +22,7 @@ watch(
   (val: string) => {
     if (val === unref(valueRef)) return
     valueRef.value = val
-  }
+  },
 )
 
 const { configGlobal } = useConfigGlobal()
@@ -40,7 +40,7 @@ watch(
   () => valueRef.value,
   (val: string) => {
     emit('update:modelValue', val)
-  }
+  },
 )
 
 // 获取密码强度
@@ -86,7 +86,7 @@ const getPasswordStrength = computed(() => {
       background-color: transparent;
       border-color: var(--el-color-white);
       border-style: solid;
-      border-width: 0 5px 0 5px;
+      border-width: 0 5px;
       content: '';
     }
 

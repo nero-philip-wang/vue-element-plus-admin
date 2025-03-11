@@ -14,7 +14,7 @@ defineProps({
   showExpand: propTypes.bool.def(false),
   visible: propTypes.bool.def(true),
   searchLoading: propTypes.bool.def(false),
-  resetLoading: propTypes.bool.def(false)
+  resetLoading: propTypes.bool.def(false),
 })
 
 const onSearch = () => {

@@ -25,7 +25,7 @@ export const useUserStore = defineStore('user', {
       roleRouters: undefined,
       // 记住我
       rememberMe: true,
-      loginInfo: undefined
+      loginInfo: undefined,
     }
   },
   getters: {
@@ -46,7 +46,7 @@ export const useUserStore = defineStore('user', {
     },
     getLoginInfo(): UserLoginType | undefined {
       return this.loginInfo
-    }
+    },
   },
   actions: {
     setTokenKey(tokenKey: string) {
@@ -66,7 +66,7 @@ export const useUserStore = defineStore('user', {
       ElMessageBox.confirm(t('common.loginOutMessage'), t('common.reminder'), {
         confirmButtonText: t('common.ok'),
         cancelButtonText: t('common.cancel'),
-        type: 'warning'
+        type: 'warning',
       })
         .then(async () => {
           const res = await loginOutApi().catch(() => {})
@@ -92,9 +92,9 @@ export const useUserStore = defineStore('user', {
     },
     setLoginInfo(loginInfo: UserLoginType | undefined) {
       this.loginInfo = loginInfo
-    }
+    },
   },
-  persist: true
+  persist: true,
 })
 
 export const useUserStoreWithOut = () => {

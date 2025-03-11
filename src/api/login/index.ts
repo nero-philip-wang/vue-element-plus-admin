@@ -14,7 +14,7 @@ export const loginOutApi = (): Promise<IResponse> => {
 }
 
 export const getAdminRoleApi = (
-  params: RoleParams
+  params: RoleParams,
 ): Promise<IResponse<AppCustomRouteRecordRaw[]>> => {
   return request.get({ url: '/mock/role/list', params })
 }

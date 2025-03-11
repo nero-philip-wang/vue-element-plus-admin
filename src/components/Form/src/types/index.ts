@@ -18,7 +18,7 @@ import {
   FormItemProps as ElFormItemProps,
   FormProps as ElFormProps,
   ISelectProps,
-  UploadProps
+  UploadProps,
 } from 'element-plus'
 import { IEditorConfig } from '@wangeditor/editor'
 import { CSSProperties } from 'vue'
@@ -53,7 +53,7 @@ export enum ComponentNameEnum {
   INPUT_PASSWORD = 'InputPassword',
   EDITOR = 'Editor',
   TREE_SELECT = 'TreeSelect',
-  UPLOAD = 'Upload'
+  UPLOAD = 'Upload',
 }
 
 type CamelCaseComponentName = keyof typeof ComponentNameEnum extends infer K
@@ -256,7 +256,7 @@ export interface TransferComponentProps extends Partial<TransferProps> {
     change?: (
       value: number | string,
       direction: 'left' | 'right',
-      movedKeys: string[] | number[]
+      movedKeys: string[] | number[],
     ) => void
     leftCheckChange?: (value: any[]) => void
     rightCheckChange?: (value: any[]) => void
@@ -444,7 +444,7 @@ export interface TimePickerComponentProps {
   tabindex?: number | string
   on?: {
     change: (
-      val: number | string | Date | [number, number] | [string, string] | [Date, Date]
+      val: number | string | Date | [number, number] | [string, string] | [Date, Date],
     ) => void
     blur?: (event: FocusEvent) => void
     focus?: (event: FocusEvent) => void
