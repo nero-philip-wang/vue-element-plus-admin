@@ -92,6 +92,7 @@ export default {
     dynamicRouter: 'Dynamic router',
     reExperienced: 'Please exit the login experience again',
     fixedMenu: 'Fixed menu',
+    borderRadius: 'square border component',
     serverDynamicRouter: 'Server dynamic router',
   },
   size: {

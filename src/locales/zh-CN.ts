@@ -92,6 +92,7 @@ export default {
     dynamicRouter: '动态路由',
     reExperienced: '请重新退出登录体验',
     fixedMenu: '固定菜单',
+    borderRadius: '组件轮廓直角',
     serverDynamicRouter: '服务端动态路由',
   },
   size: {

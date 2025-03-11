@@ -123,6 +123,15 @@ const serverDynamicRouterChange = (show: boolean) => {
   appStore.setServerDynamicRouter(show)
 }
 
+// 边框半径
+const isSquareBorder = ref(appStore.theme.elBorderRadiusBase === '0px')
+
+const borderRadiusChange = (square: boolean) => {
+  let border = square ? '0px' : '4px'
+  setCssVar('--el-border-radius-base', border)
+  appStore.setSquareBorder(border)
+}
+
 // 固定菜单
 const fixedMenu = ref(appStore.getFixedMenu)
 
@@ -222,6 +231,11 @@ watch(
     <div class="flex justify-between items-center">
       <span class="text-14px">{{ t('setting.fixedMenu') }}</span>
       <ElSwitch v-model="fixedMenu" @change="fixedMenuChange" />
+    </div>
+
+    <div class="flex justify-between items-center">
+      <span class="text-14px">{{ t('setting.borderRadius') }}</span>
+      <ElSwitch v-model="isSquareBorder" @change="borderRadiusChange" />
     </div>
   </div>
 </template>

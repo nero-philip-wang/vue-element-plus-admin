@@ -65,5 +65,6 @@ declare global {
     topHeaderTextColor?: string
     topHeaderHoverColor?: string
     topToolBorderColor?: string
+    elBorderRadiusBase?: string
   }
 }

@@ -92,6 +92,8 @@ export const useAppStore = defineStore('app', {
         topHeaderHoverColor: '#f6f6f6',
         // 头部边框颜色
         topToolBorderColor: '#eee',
+        // 组件轮廓直角
+        elBorderRadiusBase: '4px',
       },
     }
   },
@@ -220,6 +222,9 @@ export const useAppStore = defineStore('app', {
     },
     setFixedMenu(fixedMenu: boolean) {
       this.fixedMenu = fixedMenu
+    },
+    setSquareBorder(border: string) {
+      this.theme.elBorderRadiusBase = border
     },
     setPageLoading(pageLoading: boolean) {
       this.pageLoading = pageLoading

@@ -127,7 +127,9 @@ const copyConfig = async () => {
         // 头部悬停颜色
         topHeaderHoverColor: '${appStore.getTheme.topHeaderHoverColor}',
         // 头部边框颜色
-        topToolBorderColor: '${appStore.getTheme.topToolBorderColor}'
+        topToolBorderColor: '${appStore.getTheme.topToolBorderColor}',
+        // 组件轮廓直角
+        elBorderRadiusBase: ''${appStore.getTheme.elBorderRadiusBase}''
       }
     `,
     legacy: true,
