@@ -129,5 +129,8 @@
   "bugs": {
     "url": "https://github.com/kailong321200875/vue-element-plus-admin/issues"
   },
-  "homepage": "https://github.com/kailong321200875/vue-element-plus-admin"
+  "homepage": "https://github.com/kailong321200875/vue-element-plus-admin",
+  "volta": {
+    "node": "18.20.4"
+  }
 }
